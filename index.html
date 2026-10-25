@@ -585,15 +585,61 @@
 /* Contact Section */
 .contact-panel {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 35px;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  background: linear-gradient(120deg, #0b1730, #19365f);
+  gap: 36px;
+  padding: 46px;
+  background: linear-gradient(125deg, #0b1730, #19365f);
   color: #ffffff;
-  padding: 45px;
-  border-radius: 20px;
-  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
   box-shadow: 0 18px 45px rgba(11, 23, 48, 0.14);
+}
+
+.contact-panel h2 {
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: -0.8px;
+  margin-bottom: 14px;
+}
+
+.contact-panel > div > p {
+  color: #d1dcef;
+  max-width: 620px;
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 28px;
+  margin-top: 28px;
+  color: #e1eaff;
+  font-size: 0.92rem;
+}
+
+.contact-details p {
+  min-width: 0;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.contact-details strong {
+  display: inline-block;
+  margin-bottom: 3px;
+  color: #ffffff;
+}
+
+.contact-details a {
+  color: #dce7ff;
+  text-decoration: none;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+  color: #91b2ff;
+  text-decoration: underline;
 }
 
 .contact-panel .btn {
@@ -601,24 +647,24 @@
   justify-content: center;
   align-items: center;
   gap: 9px;
+  padding: 15px 23px;
   background: #ffffff;
   color: #0b1730;
-  padding: 14px 22px;
   border: 1px solid #ffffff;
-  border-radius: 10px;
+  border-radius: 11px;
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  transition: all 0.25s ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  transition: background 0.25s ease, transform 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
 .contact-panel .btn:hover {
   background: #eaf0ff;
-  border-color: #eaf0ff;
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
 }
 
 .contact-panel .btn:focus-visible {
@@ -626,37 +672,17 @@
   outline-offset: 4px;
 }
 
-.contact-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 28px;
-  margin-top: 25px;
-  color: #e1eaff;
-  font-size: 0.92rem;
-}
-
-.contact-details p {
-  line-height: 1.8;
-}
-
-.contact-details a {
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  overflow-wrap: anywhere;
-  transition: color 0.2s ease;
-}
-
-.contact-details a:hover {
-  color: #a9c1ff;
-}
-
 @media (max-width: 720px) {
   .contact-panel {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 28px 22px;
-    border-radius: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    padding: 30px 23px;
+    border-radius: 17px;
+  }
+
+  .contact-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 
   .contact-panel .btn {
@@ -664,12 +690,8 @@
     max-width: 100%;
     white-space: normal;
   }
-
-  .contact-details {
-    flex-direction: column;
-    gap: 14px;
-  }
 }
+
 
     footer {
       margin-top: 75px;
@@ -1175,9 +1197,14 @@
             </div>
           </div>
 
-          <a href="mailto:sabakashif.786@gmail.com?subject=Professional%20Enquiry%20for%20Kashif%20Saba">
-  Contact by Email
+         
+<a
+  class="btn"
+  href="mailto:sabakashif.786@gmail.com?subject=Professional%20Enquiry%20for%20Kashif%20Saba"
+>
+  ✉ Contact by Email ↗
 </a>
+
         </div>
       </div>
     </section>
