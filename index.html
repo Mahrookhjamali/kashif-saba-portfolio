@@ -1,0 +1,1127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1730">
+
+  <title>Kashif Saba | Professional Portfolio</title>
+  <meta name="description" content="Professional portfolio of Kashif Saba, featuring experience, skills, education and career background.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b1730;
+      --navy-light: #142747;
+      --blue: #4776e6;
+      --blue-light: #eaf0ff;
+      --white: #ffffff;
+      --bg: #f6f8fc;
+      --text: #263247;
+      --muted: #69768b;
+      --border: #e4e9f2;
+      --shadow: 0 16px 45px rgba(11, 23, 48, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Manrope", sans-serif;
+      color: var(--navy);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #526078;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: white !important;
+      padding: 10px 17px;
+      border-radius: 8px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: var(--blue-light);
+      color: var(--navy);
+      font-size: 1.4rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(71,118,230,.24), transparent 30%),
+        linear-gradient(125deg, #09142a 0%, #102443 60%, #17345a 100%);
+      color: white;
+      padding: 100px 0 105px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 50%;
+      right: -100px;
+      bottom: -210px;
+      box-shadow: 0 0 0 45px rgba(255,255,255,.025),
+                  0 0 0 90px rgba(255,255,255,.02);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      align-items: center;
+      gap: 65px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 13px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 30px;
+      color: #d6e3ff;
+      font-size: 0.82rem;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #78a2ff;
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.2;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #91b2ff;
+    }
+
+    .hero-subtitle {
+      color: #c5d2e7;
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      color: #c2cde0;
+      max-width: 590px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 9px;
+      padding: 13px 20px;
+      font-size: 0.93rem;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #7197ff;
+      color: #08152d;
+    }
+
+    .btn-primary:hover {
+      background: #8bacff;
+    }
+
+    .btn-outline {
+      color: white;
+      border-color: rgba(255,255,255,.35);
+      background: rgba(255,255,255,.04);
+    }
+
+    .profile-card {
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 32px 25px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.12);
+    }
+
+    .profile-monogram {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #dce7ff, #779cff);
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      border: 5px solid rgba(255,255,255,.15);
+    }
+
+    .profile-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 7px;
+    }
+
+    .profile-card p {
+      color: #c5d2e7;
+      font-size: .9rem;
+    }
+
+    .profile-divider {
+      height: 1px;
+      background: rgba(255,255,255,.15);
+      margin: 23px 0;
+    }
+
+    .profile-note {
+      font-size: .82rem !important;
+      color: #dce6f8 !important;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: -30px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .fact {
+      background: white;
+      padding: 23px 20px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+    }
+
+    .fact strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.02rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .fact span {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      color: var(--navy);
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .info-card {
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .info-card h3 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .92rem;
+    }
+
+    .info-row:last-child {
+      border-bottom: 0;
+    }
+
+    .info-row span:first-child {
+      color: var(--muted);
+    }
+
+    .info-row span:last-child {
+      text-align: right;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .experience-section {
+      background: white;
+    }
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 30px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .experience-date {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .experience-content h3 {
+      color: var(--navy);
+      font-size: 1.25rem;
+      margin-bottom: 7px;
+    }
+
+    .company {
+      color: var(--muted);
+      font-size: .93rem;
+      margin-bottom: 16px;
+    }
+
+    .experience-content p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .responsibility-list {
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    .responsibility-list li {
+      margin: 8px 0;
+      padding-left: 4px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 11px;
+      font-size: 1.25rem;
+      margin-bottom: 18px;
+    }
+
+    .skill-card h3 {
+      color: var(--navy);
+      font-size: 1.08rem;
+      margin-bottom: 9px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 27px;
+    }
+
+    .tag {
+      padding: 8px 13px;
+      background: var(--blue-light);
+      color: #3155a0;
+      border-radius: 7px;
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    .education-section {
+      background: white;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .education-card {
+      padding: 27px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .education-year {
+      color: var(--blue);
+      font-size: .8rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .education-card h3 {
+      color: var(--navy);
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 35px;
+      align-items: center;
+      background: linear-gradient(120deg, var(--navy), #19365f);
+      color: white;
+      padding: 45px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 13px;
+    }
+
+    .contact-panel p {
+      color: #c7d4e8;
+      max-width: 620px;
+    }
+
+    .contact-panel .btn {
+      background: white;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 25px;
+      margin-top: 25px;
+      color: #e1eaff;
+      font-size: .9rem;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 75px;
+      background: #071124;
+      color: #bdc8da;
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: .85rem;
+    }
+
+    .footer-brand {
+      color: white;
+      font-weight: 800;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .back-top {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 500;
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .back-top.visible {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 18px 5% 23px;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+      }
+
+      .nav-links .nav-cta {
+        padding: 11px 15px;
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding: 70px 0 75px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.2px;
+      }
+
+      .profile-card {
+        max-width: 390px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .quick-facts {
+        grid-template-columns: 1fr;
+        margin-top: 22px;
+      }
+
+      .fact {
+        padding: 18px 20px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 23px;
+      }
+
+      .skills-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        padding: 30px 24px;
+      }
+
+      .contact-panel .btn {
+        justify-self: start;
+      }
+
+      .info-card {
+        padding: 22px;
+      }
+
+      .info-row {
+        gap: 12px;
+      }
+
+      footer {
+        margin-top: 55px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">KASHIF<span>.</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="nav-cta">Contact Me ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            PROFESSIONAL PORTFOLIO
+          </div>
+
+          <h1>Kashif <span>Saba</span></h1>
+
+          <!-- Edit the role below to match the CV exactly -->
+          <p class="hero-subtitle">
+            Store Keeping · Inventory · Spare Parts Management
+          </p>
+
+          <p class="hero-description">
+            A dedicated professional focused on organised inventory,
+            accurate record keeping and efficient day-to-day operations.
+            Committed to responsibility, teamwork and continuous learning.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#experience">
+              Explore My Experience ↗
+            </a>
+            <a class="btn btn-outline" href="#contact">
+              Get In Touch
+            </a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="profile-monogram" aria-label="KS initials">KS</div>
+          <h2>Kashif Saba</h2>
+          <p>Professional Profile</p>
+          <div class="profile-divider"></div>
+          <p class="profile-note">
+            Reliable work. Organised processes. Professional growth.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- QUICK FACTS -->
+    <div class="container quick-facts">
+      <div class="fact">
+        <strong>Inventory &amp; Records</strong>
+        <span>Organised stock documentation</span>
+      </div>
+      <div class="fact">
+        <strong>Operational Support</strong>
+        <span>Structured day-to-day processes</span>
+      </div>
+      <div class="fact">
+        <strong>Professional Mindset</strong>
+        <span>Accuracy, teamwork and responsibility</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">About Me</div>
+          <h2>Professionalism in every detail.</h2>
+          <p>
+            An overview of my professional approach, strengths and career focus.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I am Kashif Saba, a professional interested in inventory
+              management, store operations, documentation and maintaining
+              accurate records.
+            </p>
+            <p>
+              I value organised workflows, responsible handling of tasks
+              and clear coordination with colleagues. My goal is to
+              contribute to an efficient workplace while continuing to
+              develop my professional skills.
+            </p>
+            <p>
+              I believe that consistency, attention to detail and a
+              willingness to learn are important to long-term career growth.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Professional Overview</h3>
+            <div class="info-row">
+              <span>Career Focus</span>
+              <span>Store &amp; Inventory</span>
+            </div>
+            <div class="info-row">
+              <span>Key Strength</span>
+              <span>Organisation</span>
+            </div>
+            <div class="info-row">
+              <span>Work Approach</span>
+              <span>Detail-Oriented</span>
+            </div>
+            <div class="info-row">
+              <span>Growth Mindset</span>
+              <span>Continuous Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Experience</div>
+          <h2>Professional experience</h2>
+          <p>
+            Relevant responsibilities and work history.
+          </p>
+        </div>
+
+        <article class="experience-card">
+          <div class="experience-date">
+            Work History
+          </div>
+
+          <div class="experience-content">
+            <!-- Replace this heading with the exact job title from the CV -->
+            <h3>Store / Inventory Operations</h3>
+            <!-- Add the real employer and dates after confirming them -->
+            <p class="company">
+              Employer and employment dates to be added from the CV
+            </p>
+
+            <p>
+              Key areas of responsibility may include the following.
+              Keep only the duties that accurately reflect the candidate's
+              actual work experience.
+            </p>
+
+            <ul class="responsibility-list">
+              <li>Maintaining stock records and inventory documentation.</li>
+              <li>Supporting the receipt, storage and issue of materials.</li>
+              <li>Organising stock and helping maintain accurate records.</li>
+              <li>Coordinating with relevant teams for routine operations.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Skills &amp; Expertise</div>
+          <h2>Skills that support efficient work.</h2>
+          <p>
+            Practical capabilities and professional strengths.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon">▤</div>
+            <h3>Inventory Management</h3>
+            <p>
+              Organising stock information and supporting accurate inventory records.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">✓</div>
+            <h3>Record Keeping</h3>
+            <p>
+              Maintaining structured documentation and checking information carefully.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">▦</div>
+            <h3>Computer Applications</h3>
+            <p>
+              Familiarity with computer-based office tasks and digital documentation.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">₹</div>
+            <h3>Tally</h3>
+            <p>
+              Accounting software knowledge. Include only if this matches the candidate's actual skills.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">⇄</div>
+            <h3>Coordination</h3>
+            <p>
+              Supporting communication and coordination in routine workplace activities.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">◎</div>
+            <h3>Attention to Detail</h3>
+            <p>
+              A careful approach to documentation, organisation and assigned tasks.
+            </p>
+          </article>
+        </div>
+
+        <div class="skill-tags" aria-label="Areas of expertise">
+          <span class="tag">Store Operations</span>
+          <span class="tag">Stock Records</span>
+          <span class="tag">Documentation</span>
+          <span class="tag">Computer Applications</span>
+          <span class="tag">Team Coordination</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education-section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Education</div>
+          <h2>Academic background</h2>
+          <p>
+            Educational qualifications and relevant professional learning.
+          </p>
+        </div>
+
+        <div class="education-grid">
+          <article class="education-card">
+            <div class="education-year">Graduation</div>
+            <h3>Bachelor of Arts (B.A.)</h3>
+            <p>
+              Geography — add the institution, university and year as stated
+              in the original CV.
+            </p>
+          </article>
+
+          <article class="education-card">
+            <div class="education-year">Higher Secondary</div>
+            <h3>HSC / Intermediate</h3>
+            <p>
+              Add the board, institution and passing year from the original CV.
+            </p>
+          </article>
+
+          <article class="education-card">
+            <div class="education-year">Secondary</div>
+            <h3>SSC / Matriculation</h3>
+            <p>
+              Add the board, institution and passing year from the original CV.
+            </p>
+          </article>
+        </div>
+
+        <div class="info-card" style="margin-top:22px;">
+          <h3>Additional Training</h3>
+          <p style="color:var(--muted);">
+            D.C.A. (Diploma in Computer Applications) — confirm the exact
+            qualification and issuing institute before publishing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <div class="section-label" style="color:#a9c1ff;">
+              Contact
+            </div>
+            <h2>Let's connect professionally.</h2>
+            <p>
+              For professional opportunities, work-related enquiries
+              or further information, please get in touch.
+            </p>
+
+            <div class="contact-details">
+              <!-- Add only contact details the client approves for public display -->
+              <span>Email: Add approved email address</span>
+              <span>Phone: Add approved phone number</span>
+            </div>
+          </div>
+
+          <a class="btn" href="mailto:">
+            Contact by Email ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">KASHIF SABA</div>
+      <p>Professional Portfolio</p>
+      <p>© <span id="year"></span> Kashif Saba. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const backTop = document.getElementById("backTop");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    document.querySelectorAll("#navLinks a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    window.addEventListener("scroll", function () {
+      backTop.classList.toggle("visible", window.scrollY > 450);
+    });
+
+    backTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
